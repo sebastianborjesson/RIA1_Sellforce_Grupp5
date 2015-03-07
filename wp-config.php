@@ -16,7 +16,7 @@
 
 // ** MySQL-inställningar - MySQL-uppgifter får du från ditt webbhotell ** //
 /** Namnet på databasen du vill använda för WordPress */
-define('DB_NAME', 'WP_RIA1_Grupp5');
+define('DB_NAME', 'RIA1_Sellforce_Grupp5');
 
 /** MySQL-databasens användarnamn */
 define('DB_USER', 'root');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'xLmK=A9Q+Thaszt}H7OEpo>R{_;%F?)]RZaC^>IFp-|#a{#?^lOQg`31(gIaklac');
-define('SECURE_AUTH_KEY',  'rji1%Vd*)/q8JRGT !S-nqZ+l=UsLQJ!1.s|p%zw}<We8h7WT,gB+`-?9knYD#R@');
-define('LOGGED_IN_KEY',    '<N#;&q|]3@){J{YG~Hl+3~[4C;vaJ2XO5.<A;, @q{&Vw|:k&*^(OjhTRo|KLX.m');
-define('NONCE_KEY',        '-H+S]3A]oVy]y;,[=,y0g-K&yYKclC&,J>:q:C^?CfT%xD2E,3f@&`%]+=^F<lLj');
-define('AUTH_SALT',        'FsM4{`PDC>x<j 1mW|EgLgRlXhEBR.t ^iSx&K*-XhmqJXX#2)#I~BNT Syfme;,');
-define('SECURE_AUTH_SALT', 'dkShK-N]H8J00~Y,N[c=6k<K#{Dqdb+qyZA=@SGHD+%e)U-H|6:+.uvEs|b[F:wX');
-define('LOGGED_IN_SALT',   'uZM(+ClVA(GMjdn@rBV<)suP-bshKnX.T>A|XRX%Bv1s6,$qz%?d>e//vT*~7n ^');
-define('NONCE_SALT',       '3OvXc.^Y29=~r%x059D/ Ezb&APSvPwD%eNUu`QykW*uJU0?<.6f}I#K+T}U(w2i');
+define('AUTH_KEY',         'a-wDW6*p9%cM%ED]):-:=|C|kD{34Kq38au@vY*(Qu.53-Xqz%$SFiY|J6v^>;/+');
+define('SECURE_AUTH_KEY',  'HmBR>H|MoN=.L-g!!W-b.&b_8PaSp}|zHG*y<.s=7pY=[wir>v(1atLn9TqekA4Y');
+define('LOGGED_IN_KEY',    'f/_tXtc$i*q*f+0%Af^o<V/|LwgG7 ;1f%IX5U}DxO}XgW@knO0)(f:<[2p,fNsd');
+define('NONCE_KEY',        'jcB4],E{ctf-Z/OwwmP9.|z~%[g5|0z@q!nFw5*73$y|.@0elz0PDi+8V!q[NW|`');
+define('AUTH_SALT',        '0G+Q;J[ |P?N|M|L6JLjr3/~ +4/huZB:}^ZGTH9v9-~Fu42e->~q9/B_QW9oFYU');
+define('SECURE_AUTH_SALT', '04_E+:oyBSWA;<xIx|&1Xr0+}IS|^I+#/rT9 -JP|HzLO,lVRS3lQF{|%6%j1PGD');
+define('LOGGED_IN_SALT',   'S{| 69T ?odon.#&Jk(3/|mdB!,wl8VEH90G_QW-}dUhMFJy>-eQ(i3*(wPpKwRS');
+define('NONCE_SALT',       '$Dkj>t<DoU7Bm3$AK]]DtC@R-~](5ub8]D{+m{FtPC(I,[#`(*x+*~HX|-bqn`JW');
 
 /**#@-*/
 
