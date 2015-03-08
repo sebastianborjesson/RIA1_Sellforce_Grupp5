@@ -16,7 +16,7 @@
 
 // ** MySQL-inställningar - MySQL-uppgifter får du från ditt webbhotell ** //
 /** Namnet på databasen du vill använda för WordPress */
-define('DB_NAME', 'RIA1_Sellforce_Grupp5');
+define('DB_NAME', 'ria1_sellforce_grupp5');
 
 /** MySQL-databasens användarnamn */
 define('DB_USER', 'root');
