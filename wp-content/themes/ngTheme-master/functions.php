@@ -243,11 +243,11 @@ add_action("init", "addMetaSearch");
 
 add_filter( 'json_prepare_post', function ($data, $post, $context) {
   /*
-    town
+    city
     region
     asking_price
     monthly_fee
-    area_m2
+    living_area
     rooms
     floor
     elevator
@@ -259,7 +259,7 @@ add_filter( 'json_prepare_post', function ($data, $post, $context) {
     'region' => get_post_meta( $post['ID'], 'region', true ),
     'asking_price' => get_post_meta( $post['ID'], 'asking_price', true ),
     'monthly_fee' => get_post_meta( $post['ID'], 'monthly_fee', true ),
-    'area_m2' => get_post_meta( $post['ID'], 'area_m2', true ),
+    'gross_internal_area' => get_post_meta( $post['ID'], 'gross_internal_area', true ),
     'rooms' => get_post_meta( $post['ID'], 'rooms', true ),
     'floor' => get_post_meta( $post['ID'], 'floor', true ),
     'elevator' => get_post_meta( $post['ID'], 'elevator', true ),
