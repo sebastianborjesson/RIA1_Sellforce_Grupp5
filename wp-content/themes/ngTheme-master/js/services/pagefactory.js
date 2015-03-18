@@ -4,7 +4,7 @@ app.factory("Pages", ["WPRest", function (WPRest) {
   var pageServant = {
     get : function(pageId) {
       var callUrl = pageId ? "/pages/"+pageId : "/pages";
-      WPRest.restCall(callUrl, "GET", {}, "gotPageData");
+      WPRest.restCall(callUrl, "GET", {}, "banan");
     },
     post : function(data) {
       var callUrl = "/pages";
