@@ -206,3 +206,67 @@ if ( function_exists( 'register_nav_menus' ) ) {
 }
 
 add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
+
+//create a custom taxonomy called property
+function property_taxonomy() {
+  // create a new taxonomy
+  register_taxonomy(
+    'property',
+    'attachment', //default content type this taxonomy belong to
+    array(
+      'label' => __( 'Property' ),
+      'rewrite' => array( 'slug' => 'property' ),
+    )
+  );
+}
+
+add_action( 'init', 'property_taxonomy' );
+
+
+//make custom taxonomy available to pages as well
+function sf_wp_add_property_tax_to_posts() {
+    register_taxonomy_for_object_type( 'property', 'post' );
+}
+
+add_action( 'init' , 'sf_wp_add_property_tax_to_posts' );
+
+
+//add support for meta data queries when not logged in
+function addMetaSearch() {
+  global $wp;
+
+  // Add additional key to support.
+  array_push($wp->public_query_vars, 'meta_key');
+  array_push($wp->public_query_vars, 'meta_value');
+}
+add_action("init", "addMetaSearch");
+
+add_filter( 'json_prepare_post', function ($data, $post, $context) {
+  /*
+    town
+    region
+    asking_price
+    monthly_fee
+    area_m2
+    rooms
+    floor
+    elevator
+    balcony
+    property_type
+  */
+  $data['property_data'] = array(
+    'city' => get_post_meta( $post['ID'], 'city', true ),
+    'region' => get_post_meta( $post['ID'], 'region', true ),
+    'asking_price' => get_post_meta( $post['ID'], 'asking_price', true ),
+    'monthly_fee' => get_post_meta( $post['ID'], 'monthly_fee', true ),
+    'area_m2' => get_post_meta( $post['ID'], 'area_m2', true ),
+    'rooms' => get_post_meta( $post['ID'], 'rooms', true ),
+    'floor' => get_post_meta( $post['ID'], 'floor', true ),
+    'elevator' => get_post_meta( $post['ID'], 'elevator', true ),
+    'balcony' => get_post_meta( $post['ID'], 'balcony', true ),
+    'property_type' => get_post_meta( $post['ID'], 'property_type', true ),
+  );
+  return $data;
+}, 10, 3 );
+
+
