@@ -5,8 +5,12 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
   //route config
   $routeProvider
     .when("/", {
-      templateUrl: SITE_INFO.partials+"views/home.html",
-      controller: "homeController"
+      templateUrl : SITE_INFO.partials+"views/home.html",
+      controller : "homeController"
+    })
+    .when("/property/:name", {
+      templateUrl : SITE_INFO.partials+"views/property.html",
+      controller : "propertyController"
     })
     .otherwise({
       redirectTo: "/"
