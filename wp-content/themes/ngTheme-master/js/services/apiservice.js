@@ -4,7 +4,7 @@ app.service("WPRest", ["$http", "$rootScope", "SITE_INFO", "API_ROUTE", function
   console.log("APIPath: ", APIPath);
 
   //in a .service() service this syntax is preferred
-  this.restCall = function(url, method, data, broadcast) {
+  this.restCall = function(url, method, data, broadcastObject) {
     //using the "real" $http, instead of shorthands such as $http.get() etc.
     $http({
       url: APIPath + url,
@@ -12,12 +12,17 @@ app.service("WPRest", ["$http", "$rootScope", "SITE_INFO", "API_ROUTE", function
       data: data,
       responseType: "json"
     }).success(function(data) {
-      console.log("WPRest restCall success: ", data, " now broadcasting on: ", broadcast);
+      console.log("WPRest restCall success: ", data, " now broadcasting on: ", broadcastObject);
 
-      //using $rootScope.$broadcast() to broadcast throughout our app (module)
-      //to any $on() listeners in controllers and services
-      broadcast = broadcast ? broadcast : "restSuccess";
-      $rootScope.$broadcast(broadcast, data);
+      if(typeof broadcastObject == "object") {
+        $rootScope.$broadcast(
+          broadcastObject.broadcastName, 
+          broadcastObject.callback(data)
+        );
+      } else {
+        broadcastObject = broadcastObject ? broadcastObject : "restSuccess";
+        $rootScope.$broadcast(broadcastObject, data);
+      }
     });
   };
 
