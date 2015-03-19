@@ -269,4 +269,4 @@ add_filter( 'json_prepare_post', function ($data, $post, $context) {
   return $data;
 }, 10, 3 );
 
-
+remove_action('template_redirect', 'redirect_canonical');

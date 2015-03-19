@@ -3,7 +3,7 @@
 <head>
   <!-- base href must correspond to the base path of your wordpress site -->
   <base href="/RIA1_Sellforce_Grupp5/">
-  <title>ngTheme</title>
+  <title>Mäklarfirma Sellforce</title>
   <?php wp_head(); ?>
 </head>
 <body ng-app="ngTheme">
