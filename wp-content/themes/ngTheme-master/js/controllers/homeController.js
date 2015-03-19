@@ -1,9 +1,17 @@
 //"ngTheme" home controller.
 //dependent on $scope && WPService being injected to run
-app.controller("homeController", ["$scope", "Pages", "$sce", function($scope, Pages, $sce) {
+app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_INFO", "$routeParams", function($scope, Pages, Property, $sce, SITE_INFO, $routeParams) {
   console.log("homeController alive!");
+  console.log("routeParams: ", $routeParams);
   //get all pages
   Pages.get();
+  Property.find($routeParams);
+
+  $scope.partialsDir = SITE_INFO.partials;
+
+  $scope.$on("foundProperty", function(event, data) {
+    console.log("homeController on foundProperty: ", data);
+  });
 
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
