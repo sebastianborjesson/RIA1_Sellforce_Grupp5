@@ -12,6 +12,10 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl : SITE_INFO.partials+"views/property.html",
       controller : "propertyController"
     })
+    .when("/property/:name/images", {
+      templateUrl : SITE_INFO.partials+"views/property_images.html",
+      controller : "propertyController"
+    })
     .otherwise({
       redirectTo: "/"
     });
