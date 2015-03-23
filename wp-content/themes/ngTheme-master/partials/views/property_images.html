@@ -5,13 +5,13 @@
 				<h2>Furubodavägen 222-6, Furuboda</h2>
 			</div>
 			<div class="panel">
-				<button class="btn btn-primary">Back top property page</button>
+				<button ng-click="goBack();" class="btn btn-primary">Back top property page</button>
 			</div>
-			<div class="panel"> <!-- ng-repeat here -->
-				<img src="./wp-content/uploads/2015/03/Skärmavbild-2015-02-23-kl.-01.12.35.png" class="img-responsive img-rounded" alt="Responsive image">
-				<p>{{Image text}}</p>
+			<div class="panel" ng-repeat="media in property.media" active="media.active"> <!-- ng-repeat here -->
+				<img src="{{media.source}}" class="img-responsive img-rounded" alt="Responsive image">
+				<p></p>
 			</div>
-			<button class="btn btn-primary">Back top property page</button>
+			<button ng-click="goBack();" class="btn btn-primary">Back top property page</button>
 		</div>
 	</div>
 </section>
