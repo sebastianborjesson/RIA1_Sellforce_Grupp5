@@ -61,6 +61,6 @@ app.factory("Property", ["WPRest", "$sce", function(WPRest, $sce) {
 				}
 			});
 		}
-	}
+	};
 	return propertyServant;
 }]);
