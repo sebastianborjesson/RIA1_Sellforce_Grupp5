@@ -9,7 +9,7 @@
 			</div>
 			<div class="panel" ng-repeat="media in property.media" active="media.active"> <!-- ng-repeat here -->
 				<img src="{{media.source}}" class="img-responsive img-rounded" alt="Responsive image">
-				<p></p>
+				<p>{{media.title}}</p>
 			</div>
 			<button ng-click="goBack();" class="btn btn-primary">Back top property page</button>
 		</div>

@@ -1,9 +1,9 @@
 <section>
 	<div class="panel">
 		<div class="panel-body">
-			<div class="panel" ng-repeat="media in property.media" active="media.active">
-				<img src="{{media.source}}" class="img-responsive img-rounded" alt="Responsive image">
-				<button ng-click="gotoImages()">More images</button>
+			<div class="panel" active="media.active">
+				<img src="{{property.media[0].source}}" class="img-responsive img-rounded" alt="Responsive image">
+				<button class="btn btn-primary" ng-click="gotoImages()">More images</button>
 			</div>
 			<div class="panel">
 				<h2>{{property.post.title}}</h2>
