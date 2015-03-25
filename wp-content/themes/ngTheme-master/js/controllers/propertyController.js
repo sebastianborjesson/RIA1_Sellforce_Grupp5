@@ -8,13 +8,13 @@ app.controller("propertyController", ["$scope", "Property", "$routeParams", "SIT
 	Property.find($routeParams);
 	$scope.partialsDir = SITE_INFO.partials;
   $scope.gotoImages = function(){
-  	$scope.goTo($location.$$path + "/images");
+		$scope.goTo($location.$$path + "/images");
 
-  	//$scope.goTo($location.$path.replace(/\/images/g,""));
-  }
+	//$scope.goTo($location.$path.replace(/\/images/g,""));
+  };
   $scope.goBack = function() {
-  	$scope.goTo($location.$$path.replace(/\/images/g,""));
-  }
+		$scope.goTo($location.$$path.replace(/\/images/g,""));
+  };
 	$scope.$on("foundProperty", function(event, data) {
 		console.log("propertyController on foundProperty: ", data);
 
@@ -22,7 +22,13 @@ app.controller("propertyController", ["$scope", "Property", "$routeParams", "SIT
 			return;
 		}
 		$scope.property = data[0];
+
+		$scope.propertyData = {};
+		if ("property_type='house'") {
+			$scope.propertyData.show = true;
+		}
 	});
+
 
 	
 }]);

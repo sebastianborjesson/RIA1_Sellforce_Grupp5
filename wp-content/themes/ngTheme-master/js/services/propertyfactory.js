@@ -49,6 +49,7 @@ app.factory("Property", ["WPRest", "$sce", function(WPRest, $sce) {
 									"media" : mediaData,
 									"post" : post,
 									"propertyData" : post.property_data
+									
 								});
 
 								if(last) {
