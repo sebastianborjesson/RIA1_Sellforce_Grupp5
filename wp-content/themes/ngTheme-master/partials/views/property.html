@@ -15,7 +15,7 @@
 							<p ng-bind-html="property.post.content"></p>
 						</div>
 					</div>
-					<div class="panel col-xs-12 col-md-4" ng-if="property.propertyData.property_type=''" ng-include="propertyData.show ? partialsDir+'views/property-info-apartment.html' : partialsDir+'views/property-info-house.html'">			
+					<div class="panel col-xs-12 col-md-4" ng-include="partialsDir+'views/property-info.html'">			
 					</div>
 				</div>
 			</div>
