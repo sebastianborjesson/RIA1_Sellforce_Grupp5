@@ -6,6 +6,7 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
   //get all pages
   Pages.get();
   Property.find($routeParams);
+  $scope.title=100;
 
   $scope.partialsDir = SITE_INFO.partials;
 

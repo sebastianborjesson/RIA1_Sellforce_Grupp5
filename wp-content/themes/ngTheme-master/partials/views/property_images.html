@@ -5,9 +5,9 @@
 				<h2>Furubodavägen 222-6, Furuboda</h2>
 			</div>
 			<div class="panel">
-				<button ng-click="goBack();" class="btn btn-primary">Back top property page</button>
+				<button ng-click="goBack();" class="btn btn-primary ">Back top property page</button>
 			</div>
-			<div class="panel" ng-repeat="media in property.media" active="media.active"> <!-- ng-repeat here -->
+			<div class="panel" ng-repeat="media in property.media|limitTo:10" active="media.active"> <!-- ng-repeat here -->
 				<img src="{{media.source}}" class="img-responsive img-rounded" alt="Responsive image">
 				<p>{{media.title}}</p>
 			</div>
