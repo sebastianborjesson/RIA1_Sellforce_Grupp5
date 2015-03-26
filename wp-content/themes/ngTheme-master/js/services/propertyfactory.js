@@ -4,10 +4,25 @@ app.factory("Property", ["WPRest", "$sce", function(WPRest, $sce) {
 		find : function(searchParameters) {
 			searchParameters = searchParameters ? searchParameters : {};
 
-			var callUrl = "/posts?filter[category_name]=properties";
+			var callUrl = "/properties";
+
+			var first = true;
 
 			for(var i in searchParameters) {
-				callUrl += "&filter["+i+"]="+searchParameters[i];
+				if (searchParameters[i].constructor.name != "Object") {
+					callUrl += first ?
+						"?filter["+i+"]="+searchParameters[i] :
+						"&filter["+i+"]="+searchParameters[i];
+				}
+				else {
+					for (var j in searchParameters[i]) {
+						callUrl += first ?
+						"?filter["+i+"]["+j+"]="+searchParameters[i][j] :
+						"&filter["+i+"]["+j+"]="+searchParameters[i][j];
+
+						first = false;
+					}
+				}
 			}
 			console.log("Found property posts: ", callUrl);
 
