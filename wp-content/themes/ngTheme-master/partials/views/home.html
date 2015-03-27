@@ -6,20 +6,144 @@
       
       <form class="form-horizontal">
       <div class="form-group ">
-        <label for="setSecret" class="col-sm-2 control-label">{{"Skriv in:"|uppercase}}</label>
-        <div class="col-sm-10">
+        <div>
+        <label for="setSecret" class="control-label"><h4><em><strong>Write in:</strong></em></h4></label>
+        
           <input ng-model="newSecret" type="text" placeholder= "skriv in adress, område, stad, kommun,län eller land"class="form-control" id="setSecret">
-         <option></option>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button ng-click="goTo('/search')" class="btn btn-default">Hitta bostäder</button>
-          <p>{{title|currency}}<em class="pull-right">555</em></p>
+
+         
+
+        <div>
+          <h4><em><strong>Type</strong></em></h4>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> Apartment
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> House 
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Cottage
+          </label>
+        </div>
+          </br>
+        <div>
+          <h4><em><strong>Region</strong></em></h4>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> Skåne
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> Halland
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Västra Götaland
+          </label>
+         </div><br>
+
+         <div class="col-sm-3">
+          <select class="form-control">
+            <option>All Cities</option>
+            <option>2</option>
+          </select>
+         </div></br></br>
+           <div>
+            <h4><em><strong>Asking price</strong></em></h4>
+            <div class="row">
+              <div class="col-xs-2">
+                <select class="form-control">
+                 <option>From</option>
+                 <option>2</option>
+                </select>
+              </div>
+              <div class="col-xs-2">            
+              <select class="form-control">
+               <option>To</option>
+               <option>2</option>
+              </select>
+              </div>
+
+            </div>
+            <div>
+            <h4><em><strong>Monthly fee</strong></em></h4>
+            <div class="row">
+              <div class="col-xs-2">
+
+              
+                <select class="form-control">
+                 <option>From</option>
+                 <option>2</option>
+                </select>
+              </div>
+              <div class="col-xs-2">            
+              <select class="form-control">
+               <option>To</option>
+               <option>2</option>
+              </select>
+              </div>
+
+            </div>
+            <div>
+            <h4><em><strong>Gross internal area</strong></em></h4>
+            <div class="row">
+              <div class="col-xs-2">
+
+              
+                <select class="form-control">
+                 <option>From</option>
+                 <option>2</option>
+                </select>
+              </div>
+              <div class="col-xs-2">            
+              <select class="form-control">
+               <option>To</option>
+               <option>2</option>
+              </select>
+              </div>
+
+            </div>
+            
+          </div>
+
+           <div class="col-sm-2">
+            <h4><em><strong>Rooms</strong></em></h4>
+          <select class="form-control">
+            <option>Min</option>
+            <option>1</option>
+           </select>
+         
+        
+            
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1">Elevator
+          </label>
+        
+        
+           <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1">Balcony
+          </label>
+
+           <h4><em><strong>Floor</strong></em></h4>
+          <select class="form-control">
+            <option>All</option>
+            <option>1</option>
+           </select>
+         
+          </div>
+           <div class="form-group ">
+              <div class="">
+                <button ng-click="goTo('/search')" class="btn btn-default">Hitta bostäder</button>
           
-        </div>
+          
+               </div>
+
+           </div>
+          
+      
       </div>
+
+      
       </form>
+     
     </section>
   </div>
   
