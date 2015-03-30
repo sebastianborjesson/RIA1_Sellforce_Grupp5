@@ -15,6 +15,8 @@ app.controller("propertyController", ["$scope", "Property", "$routeParams", "SIT
   $scope.goBack = function() {
 		$scope.goTo($location.$$path.replace(/\/images/g,""));
   };
+
+  //var pageNo = 1;
 	$scope.$on("foundProperty", function(event, data) {
 		console.log("propertyController on foundProperty: ", data);
 
@@ -23,10 +25,8 @@ app.controller("propertyController", ["$scope", "Property", "$routeParams", "SIT
 		}
 		$scope.property = data[0];
 
-		$scope.propertyData = {};
-		if ("property_type='house'") {
-			$scope.propertyData.show = true;
-		}
+    //pageNo++;
+    //Property.find($routeParams, pageNo);
 	});
 
 
