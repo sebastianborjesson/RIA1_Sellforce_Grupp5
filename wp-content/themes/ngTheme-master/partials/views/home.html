@@ -10,65 +10,39 @@
           <div></br>
             <h4><em><strong>Type</strong></em></h4>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox1" value="option1"> Apartment
+              <input type="checkbox" ng-model="propertyFilters.type.apartment" id="inlineCheckbox1" value="1"> Apartment
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox2" value="option2"> House 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox3" value="option3"> Cottage
+              <input type="checkbox" ng-model="propertyFilters.type.house" id="inlineCheckbox2" value="1"> House 
             </label>
           </div>
           </br>
           <div>
             <h4><em><strong>Region</strong></em></h4>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox1" value="option1"> Skåne
+              <input type="checkbox" ng-model="propertyFilters.region.skane" id="region1" value="1"> Skåne
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox2" value="option2"> Halland
+              <input type="checkbox" ng-model="propertyFilters.region.halland" id="region2" value="1"> Halland
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox3" value="option3"> Västra Götaland
+              <input type="checkbox" ng-model="propertyFilters.region.vastragotaland" id="region3" value="1"> Västra Götaland
             </label>
           </div><br>
-          <div class="col-sm-3">
-            <select class="form-control">
-              <option>All Cities</option>
-              <option>2</option>
-            </select>
-          </div></br></br>
           <div></br>
             <h4><em><strong>Asking price</strong></em></h4>
-            <div class="row">
-            <div class="col-xs-2">
-                <select class="form-control">
-                 <option>From</option>
-                 <option>2</option>
-                </select>
+            <div class="input-group col-xs-4">
+              <input type="number" ng-model="propFilters.askingPrice[0]" class="form-control" aria-describedby="from-price">
+              <span class="input-group-addon" id="to-price">To: </span>
+              <input type="number" ng-model="propFilters.askingPrice[1]" class="form-control" aria-describedby="to-price">
             </div>
-            <div class="col-xs-2">            
-              <select class="form-control">
-               <option>To</option>
-               <option>2</option>
-              </select>
-            </div>
-
           </div>
           <div></br>
             <h4><em><strong>Monthly fee</strong></em></h4>
-            <div class="row">
-            <div class="col-xs-2">              
-              <select class="form-control">
-                <option>From</option>
-                <option>2</option>
-              </select>
-            </div>
-            <div class="col-xs-2">            
-              <select class="form-control">
-               <option>To</option>
-               <option>2</option>
-              </select>
+            <div class="input-group col-xs-4">
+              <input type="number" ng-model="propFilters.monthlyFee[0]" class="form-control" aria-describedby="from-price">
+              <span class="input-group-addon" id="to-price">To: </span>
+              <input type="number" ng-model="propFilters.monthlyFee[1]" class="form-control" aria-describedby="to-price">
             </div>
           </div>
           <div></br>
@@ -105,14 +79,12 @@
             <select class="form-control">
               <option>All</option>
               <option>1</option>
-            </select>
-             <div></div></br></br>
-            <div class="form-group">   
-              <button ng-click="goTo('/search')" class="btn btn-default">Hitta bostäder</button>
-            </div>          
+            </select>      
           </div>      
         </div>
-      </form> 
+      </form>
+    </section>
+    <section ng-include="partialsDir+'views/search-content-list.html'">
     </section>
   </div> 
 </section>

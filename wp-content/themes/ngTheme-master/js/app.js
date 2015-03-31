@@ -16,10 +16,6 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl : SITE_INFO.partials+"views/property_images.html",
       controller : "propertyController"
     })
-    .when("/search", {
-      templateUrl : SITE_INFO.partials+"views/search-content-list.html",
-      controller : "homeController"
-    })
      .when("/contact", {
       templateUrl : SITE_INFO.partials+"views/property.html",
       controller : "homeController"

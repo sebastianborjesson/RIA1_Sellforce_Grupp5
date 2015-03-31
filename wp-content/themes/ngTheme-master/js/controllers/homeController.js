@@ -6,9 +6,64 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
   //get all pages
   Pages.get();
   Property.find($routeParams);
-  $scope.title=100;
 
   $scope.partialsDir = SITE_INFO.partials;
+
+  /*
+    Just some notes for myself:
+
+    $scope.propFilters = {
+      priceRange : [1000, 1000000], //always length === 2
+      type : "Apartment", // always string || undefined
+      elevator : "0", //string :/
+      balcony : "0", //string :/
+      typeRange : {
+        Apartment : "",
+        House : "",
+        Townhouse : ""
+      }
+    }
+  */
+
+  $scope.propertyFilters = {
+    type: {
+      apartment : true,
+      house : true,
+      cottage : true
+    },
+    region: {
+      skane : true,
+      halland : true,
+      vastragotaland : true
+    },
+    askingPrice : [],
+    monthlyFee : [],
+    rooms : [],
+    floor : [],
+    elevator : "",
+    balcony : "",
+  };
+
+  $scope.resetPropertyFilters = function() {
+    $scope.propertyFilters = {
+      type: {
+        Apartment : true,
+        House : true,
+        Cottage : true
+      },
+      region: {
+        skane : true,
+        halland : true,
+        vastragotaland : true
+      },
+      askingPrice : [],
+      monthlyFee : [],
+      rooms : [],
+      floor : [],
+      elevator : "",
+      balcony : "",
+    };
+  };
 
   $scope.$on("foundProperty", function(event, data) {
     console.log("homeController on foundProperty: ", data);
