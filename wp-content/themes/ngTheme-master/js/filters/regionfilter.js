@@ -1,6 +1,7 @@
 app.filter('regionArea', function() {
   return function (properties, region) {
     if (!properties) { return; }
+    
     /*
       region: {
         skane : false,
@@ -11,7 +12,7 @@ app.filter('regionArea', function() {
 
     var notApplicable = true;
     for (var i in region) {
-      if (typeof region[i] == "true") {
+      if (typeof region[i] == "boolean") {
         notApplicable = false;
       }
     }

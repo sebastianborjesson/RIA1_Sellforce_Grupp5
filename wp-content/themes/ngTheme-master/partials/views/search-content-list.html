@@ -11,7 +11,7 @@
           <th>Gross Internal Area:</th>
           <th>Date:</th>
         </tr>
-        <tr ng-repeat="searchResults in searchModels | propertyType:propertyFilters.type | regionArea:propertyFilters.region">
+        <tr ng-repeat="searchResults in searchModels | filter:citySearchFields | propertyType:propertyFilters.type | regionArea:propertyFilters.region | askingPrice:propertyFilters.askingPrice | monthlyFee:propertyFilters.monthlyFee | grossInternalArea:propertyFilters.grossInternalArea | rooms:propertyFilters.rooms | hasElevator:propertyFilters.elevator | hasBalcony:propertyFilters.balcony">
           <td>{{searchResults.propertyData.city | capitalize}}</td>
           <td>{{searchResults.post.title}}</td>
           <td>{{searchResults.propertyData.rooms}}</td>

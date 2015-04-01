@@ -1,6 +1,7 @@
 app.filter('propertyType', function() {
   return function (properties, type) {
     if (!properties) { return; }
+    
     /*
       type: {
         Apartment : true,
@@ -11,8 +12,8 @@ app.filter('propertyType', function() {
 
     // var notApplicable = true;
     // for (var i in type) {
-    //   if (typeof type[i] == "false") {
-    //     notApplicable = true;
+    //   if (typeof type[i] == "boolean") {
+    //     notApplicable = false;
     //   }
     // }
 

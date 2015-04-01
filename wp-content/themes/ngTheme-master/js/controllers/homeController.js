@@ -12,20 +12,7 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
   /*
     Just some notes for myself:
 
-    $scope.propFilters = {
-      priceRange : [1000, 1000000], //always length === 2
-      type : "Apartment", // always string || undefined
-      elevator : "0", //string :/
-      balcony : "0", //string :/
-      typeRange : {
-        Apartment : "",
-        House : "",
-        Townhouse : ""
-      }
-    }
-  */
-
-  $scope.propertyFilters = {
+   $scope.propertyFilters = {
     type: {
       apartment : true,
       house : true,
@@ -36,10 +23,29 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
       halland : true,
       vastragotaland : true
     },
+      askingPrice : [],
+      monthlyFee : [],
+      rooms : [],
+      floor : [],
+      elevator : "",
+      balcony : "",
+    };
+  */
+
+  $scope.propertyFilters = {
+    type: {
+      apartment : true,
+      house : true
+    },
+    region: {
+      skane : true,
+      halland : true,
+      vastragotaland : true
+    },
     askingPrice : [],
     monthlyFee : [],
+    grossInternalArea : [],
     rooms : [],
-    floor : [],
     elevator : "",
     balcony : "",
   };

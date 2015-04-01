@@ -9,6 +9,27 @@ app.filter("askingPrice", function() {
       var property = properties[i];
 
       property.propertyData.asking_price = property.propertyData.asking_price / 1;
+
+      if (priceRange[0] && priceRange[1] &&
+        property.propertyData.asking_price >= priceRange[0] &&
+        property.propertyData.asking_price <= priceRange[1]
+      ) {
+
+        filtered.push(property);
+      }
+      else if (priceRange[0] && !priceRange[1] &&
+        property.propertyData.asking_price >= priceRange[0]
+      ) {
+        filtered.push(property);
+      }
+      else if (!priceRange[0] && priceRange[1] &&
+        property.propertyData.asking_price <= priceRange[1]
+      ) {
+        filtered.push(property);
+      }
+      else if (!priceRange[0] && !priceRange[1]) {
+        filtered.push(property);
+      }
     }
 
     return filtered;
