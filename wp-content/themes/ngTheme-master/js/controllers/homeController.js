@@ -9,29 +9,6 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
 
   $scope.partialsDir = SITE_INFO.partials;
 
-  /*
-    Just some notes for myself:
-
-   $scope.propertyFilters = {
-    type: {
-      apartment : true,
-      house : true,
-      cottage : true
-    },
-    region: {
-      skane : true,
-      halland : true,
-      vastragotaland : true
-    },
-      askingPrice : [],
-      monthlyFee : [],
-      rooms : [],
-      floor : [],
-      elevator : "",
-      balcony : "",
-    };
-  */
-
   $scope.propertyFilters = {
     type: {
       apartment : true,
@@ -53,19 +30,18 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
   $scope.resetPropertyFilters = function() {
     $scope.propertyFilters = {
       type: {
-        Apartment : true,
-        House : true,
-        Cottage : true
+        apartment : false,
+        house : false
       },
       region: {
-        skane : true,
-        halland : true,
-        vastragotaland : true
+        skane : false,
+        halland : false,
+        vastragotaland : false
       },
       askingPrice : [],
       monthlyFee : [],
+      grossInternalArea : [],
       rooms : [],
-      floor : [],
       elevator : "",
       balcony : "",
     };
