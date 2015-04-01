@@ -1,33 +1,91 @@
 <section class="container">
-  <div class="row  ">
-    <article class="col-xs-12 col-sm-10 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
-      <h2>Hello World!</h2>
-      <p>You probably want to start by reading the <a href="http://wp-api.org/guides/getting-started.html" target="_blank">WP JSON REST API documentation.</a></p>
-    </article>
-   
-  </div>
-   <section class="jumbotron">
-      
-      <form class="form-horizontal  >
-      <div class="form-group ">
-        <label for="setSecret" class="col-sm-2 control-label">{{"Skriv in:"|uppercase}}</label>
-        <div class="col-sm-10">
-          <input ng-model="newSecret" type="text" placeholder= "skriv in adress, område, stad, kommun,län eller land"class="form-control" id="setSecret">
-         <option></option>
-        </div>
+  <div class="row">  
+    <section class="jumbotron alert alert-success">  
+      <form class="form-horizontal">
+        <div>
+          <div class="form-group">
+            <label for="setSecret" class="control-label"><h4><em><strong>Write in:</strong></em></h4></label>        
+            <input ng-model="citySearchFields.propertyData.city" type="text" placeholder= "skriv in adress, område, stad, kommun,län eller land" value="" class="form-control" id="setSecret">
+          </div>
+          <div class="form-group">
+            <h4><em><strong>Type</strong></em></h4>
+            <label class="checkbox-inline">
+              <input type="checkbox" ng-model="propertyFilters.type.apartment" id="inlineCheckbox1" value="1"> Apartment
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" ng-model="propertyFilters.type.house" id="inlineCheckbox2" value="1"> House 
+            </label>
+          </div>
+          <div class="form-group">
+            <h4><em><strong>Region</strong></em></h4>
+            <label class="checkbox-inline">
+              <input type="checkbox" ng-model="propertyFilters.region.skane" id="region1" value="1"> Skåne
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" ng-model="propertyFilters.region.halland" id="region2" value="1"> Halland
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" ng-model="propertyFilters.region.vastragotaland" id="region3" value="1"> Västra Götaland
+            </label>
+          </div>
+          <div class="form-group">
+            <h4><em><strong>Asking price</strong></em></h4>
+            <div class="input-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <input type="number" ng-model="propertyFilters.askingPrice[0]" class="form-control" aria-describedby="from-price">
+              <span class="input-group-addon" id="to-price">To: </span>
+              <input type="number" ng-model="propertyFilters.askingPrice[1]" class="form-control" aria-describedby="to-price">
+            </div>
+          </div>
+          <div class="form-group">
+            <h4><em><strong>Rooms</strong></em></h4>
+            <!-- <div class="input-group col-xs-4">
+              <input type="number" ng-model="propertyFilters.rooms[0]" class="form-control" aria-describedby="from-room">
+              <span class="input-group-addon" id="to-room">To: </span>
+              <input type="number" ng-model="propertyFilters.rooms[1]" class="form-control" aria-describedby="to-room">
+            </div> -->
+            <div class="input-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <input type="number" ng-model="propertyFilters.rooms[0]" class="form-control" aria-describedby="from-room">
+              <span class="input-group-addon" id="to-room">To:</span>
+              <input type="number" ng-model="propertyFilters.rooms[1]" class="form-control" aria-describedby="to-room">
+            </div>
+          </div>
+          <div class="form-group">
+            <h4><em><strong>Gross internal area</strong></em></h4>
+            <div class="input-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <input type="number" ng-model="propertyFilters.grossInternalArea[0]" class="form-control" aria-describedby="from-area">
+              <span class="input-group-addon" id="to-price">To: </span>
+              <input type="number" ng-model="propertyFilters.grossInternalArea[1]" class="form-control" aria-describedby="to-area">
+            </div>
+          </div>
+          <div class="form-group">
+            <h4><em><strong>Elevator</strong></em></h4>
+            <label class="radio-inline">
+              <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio1" value=""> N/A
+            </label>
+            <label class="radio-inline">
+              <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio2" value="1"> Yes
+            </label>
+            <label class="radio-inline">
+              <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio3" value="0"> No
+            </label>
+          </div>
+          <div class="form-group">
+            <h4><em><strong>Balcony</strong></em></h4>
+            <label class="radio-inline">
+              <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio1" value=""> N/A
+            </label>
+            <label class="radio-inline">
+              <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio2" value="1"> Yes
+            </label>
+            <label class="radio-inline">
+              <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio3" value="0"> No
+            </label>
+          </div>
+        </div>   
       </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button ng-click="" class="btn btn-default">Hitta bostäder </button>
-          <p>{{title|currency}}<em class="pull-right">555</em></p>
-          
-        </div>
-      </div>
-      </form>
-    </section>
-  <!-- 
-    here we output the html that we have told Angular to trust
-    using $sce.trustAsHtml. We cannot use {{}} for HTML strings 
-  -->
-  
+    </form>
+  </section>
+  </div> 
+  <section ng-include="partialsDir+'views/search-content-list.html'">
+  </section>
 </section>

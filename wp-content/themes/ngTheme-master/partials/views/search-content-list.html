@@ -1,0 +1,25 @@
+<div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title search-title">Search results:</h3>
+    </div>
+      <table class="table">
+        <tr>
+          <th>City:</th>
+          <th>Adress:</th>
+          <th>Rooms:</th>
+          <th>Gross Internal Area:</th>
+          <th>Date:</th>
+        </tr>
+        <tr ng-repeat="searchResults in searchModels | filter:citySearchFields | propertyType:propertyFilters.type | regionArea:propertyFilters.region | askingPrice:propertyFilters.askingPrice | monthlyFee:propertyFilters.monthlyFee | grossInternalArea:propertyFilters.grossInternalArea | rooms:propertyFilters.rooms | hasElevator:propertyFilters.elevator | hasBalcony:propertyFilters.balcony">
+          <td>{{searchResults.propertyData.city | capitalize}}</td>
+          <td>{{searchResults.post.title}}</td>
+          <td>{{searchResults.propertyData.rooms}}</td>
+          <td>{{searchResults.propertyData.gross_internal_area}} m2</td>
+          <td>{{searchResults.post.date | date:medium}}</td>
+          <td><button class="btn btn-xs btn-primary" ng-click="goTo('property/'+searchResults.post.slug)">More info</button></td>
+        </tr>
+
+      </table>
+  </div>
+</div>

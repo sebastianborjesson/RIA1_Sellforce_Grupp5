@@ -1,18 +1,84 @@
 //"ngTheme" home controller.
 //dependent on $scope && WPService being injected to run
-app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_INFO", "$routeParams", function($scope, Pages, Property, $sce, SITE_INFO, $routeParams) {
+app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_INFO", "$routeParams", "$location", function($scope, Pages, Property, $sce, SITE_INFO, $routeParams, $location) {
   console.log("homeController alive!");
   console.log("routeParams: ", $routeParams);
   //get all pages
   Pages.get();
   Property.find($routeParams);
-  $scope.title=100;
 
   $scope.partialsDir = SITE_INFO.partials;
 
+  /*
+    Just some notes for myself:
+
+   $scope.propertyFilters = {
+    type: {
+      apartment : true,
+      house : true,
+      cottage : true
+    },
+    region: {
+      skane : true,
+      halland : true,
+      vastragotaland : true
+    },
+      askingPrice : [],
+      monthlyFee : [],
+      rooms : [],
+      floor : [],
+      elevator : "",
+      balcony : "",
+    };
+  */
+
+  $scope.propertyFilters = {
+    type: {
+      apartment : true,
+      house : true
+    },
+    region: {
+      skane : true,
+      halland : true,
+      vastragotaland : true
+    },
+    askingPrice : [],
+    monthlyFee : [],
+    grossInternalArea : [],
+    rooms : [],
+    elevator : "",
+    balcony : "",
+  };
+
+  $scope.resetPropertyFilters = function() {
+    $scope.propertyFilters = {
+      type: {
+        Apartment : true,
+        House : true,
+        Cottage : true
+      },
+      region: {
+        skane : true,
+        halland : true,
+        vastragotaland : true
+      },
+      askingPrice : [],
+      monthlyFee : [],
+      rooms : [],
+      floor : [],
+      elevator : "",
+      balcony : "",
+    };
+  };
+
   $scope.$on("foundProperty", function(event, data) {
     console.log("homeController on foundProperty: ", data);
+    $scope.searchModels = data;
   });
+
+  $scope.goTo = function(url) {
+    $location.url(url);
+  };
 
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
