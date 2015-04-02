@@ -6568,16 +6568,22 @@ footer {
 .search-title {
   margin-left: 30px;
 }
-.footTitle {
+.footTitle, .footNumber, .footEmail {
   margin-top: 25px;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 15px;
 }
-.footNumber {
-  margin-top: 25px;
-  font-size: 20px;
+
+@media all and (max-width: 1190px) and (min-width: 980px) {
+  .footTitle, .footNumber, .footEmail {
+    
+    font-size: 13px;
+  }
 }
-.footEmail {
-  margin-top: 25px;
-  font-size: 20px;
+
+@media all and (max-width: 979px) {
+  .footTitle, .footNumber, .footEmail {
+    font-size: 6px;
+  }
 }
+
