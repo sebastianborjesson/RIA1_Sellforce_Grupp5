@@ -30,13 +30,13 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
   $scope.resetPropertyFilters = function() {
     $scope.propertyFilters = {
       type: {
-        apartment : false,
-        house : false
+        apartment : true,
+        house : true
       },
       region: {
-        skane : false,
-        halland : false,
-        vastragotaland : false
+        skane : true,
+        halland : true,
+        vastragotaland : true
       },
       askingPrice : [],
       monthlyFee : [],
@@ -72,5 +72,4 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
     */
     $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
   });
-  
 }]);
