@@ -10,6 +10,7 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 		var hash = {};
 
 		menuLinkArray.forEach(function(menuLink) {
+			menuLink.children = [];
 			menuLink.url = menuLink.url.replace(SITE_INFO.http_root, "");
 
 			hash["_"+menuLink.ID] = menuLink;
@@ -19,7 +20,6 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 				return;
 			}
 
-			menuLink.children = [];
 		});
 
 		for(var i in hash) {

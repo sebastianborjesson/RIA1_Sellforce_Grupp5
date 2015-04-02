@@ -6573,10 +6573,22 @@ footer {
   margin-left: 10px;
   font-size: 15px;
 }
+.dropdown-menu > .dropdown > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown a {
+  font-family: 'Ubuntu', sans-serif;
+}
 
 @media all and (max-width: 1190px) and (min-width: 980px) {
   .footTitle, .footNumber, .footEmail {
-    
     font-size: 13px;
   }
 }
