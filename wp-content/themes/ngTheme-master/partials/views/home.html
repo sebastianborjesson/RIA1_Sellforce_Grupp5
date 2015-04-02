@@ -1,94 +1,69 @@
 <section class="container">
-  <div class="row">  
-    <section class="jumbotron alert alert-success">  
-      <form class="form-horizontal">
-        <div>
-          <div class="form-group">
-            <label for="setSecret" class="control-label"><h4><em><strong>Write in:</strong></em></h4></label>        
-            <input ng-model="citySearchFields.propertyData.city" type="text" placeholder= "skriv in adress, område, stad, kommun,län eller land" value="" class="form-control" id="setSecret">
-          </div>
-          <div class="form-group">
-            <h4><em><strong>Type</strong></em></h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" ng-model="propertyFilters.type.apartment" id="inlineCheckbox1" value="1"> Apartment
+   <section class="jumbotron">  
+      <form class="form-horizontal col-md-12">
+         <div class="form-group col-md-12">
+            <label for="search-field" class="control-label"><h4><em><strong>Free Text Search:</strong></em></h4></label>        
+            <input ng-model="citySearchFields.propertyData.city" type="text" placeholder= "Search for city" value="" class="form-control" id="search-field">
+         </div>
+         <div class="form-group col-md-4" ng-repeat="(fieldLabel, propertyField) in propertyFields">
+            <h4><em><strong>{{fieldLabel | toTitleCase}}</strong></em></h4>
+            <label class="checkbox-inline" ng-repeat="(checkboxLabel, fieldData) in propertyField.data">
+               <input type="checkbox" ng-model="propertyFilters[propertyField.id][fieldData.id]" id="{{fieldData.id}}">{{checkboxLabel | toTitleCase}}
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" ng-model="propertyFilters.type.house" id="inlineCheckbox2" value="1"> House 
-            </label>
-          </div>
-          <div class="form-group">
-            <h4><em><strong>Region</strong></em></h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" ng-model="propertyFilters.region.skane" id="region1" value="1"> Skåne
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" ng-model="propertyFilters.region.halland" id="region2" value="1"> Halland
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" ng-model="propertyFilters.region.vastragotaland" id="region3" value="1"> Västra Götaland
-            </label>
-          </div>
-          <div class="form-group">
-            <h4><em><strong>Asking price</strong></em></h4>
-            <div class="input-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <input type="number" ng-model="propertyFilters.askingPrice[0]" class="form-control" aria-describedby="from-price">
-              <span class="input-group-addon" id="to-price">To: </span>
-              <input type="number" ng-model="propertyFilters.askingPrice[1]" class="form-control" aria-describedby="to-price">
+         </div>
+         <div class="form-group col-md-4">
+            <h4><em><strong>Asking Price</strong></em></h4>
+            <div class="input-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
+               <input type="number" ng-model="propertyFilters.askingPrice[0]" class="form-control" aria-describedby="from-price">
+               <span class="input-group-addon" id="to-price">To: </span>
+               <input type="number" ng-model="propertyFilters.askingPrice[1]" class="form-control" aria-describedby="to-price">
             </div>
-          </div>
-          <div class="form-group">
+         </div>
+         <div class="form-group col-md-4">
             <h4><em><strong>Rooms</strong></em></h4>
-            <!-- <div class="input-group col-xs-4">
-              <input type="number" ng-model="propertyFilters.rooms[0]" class="form-control" aria-describedby="from-room">
-              <span class="input-group-addon" id="to-room">To: </span>
-              <input type="number" ng-model="propertyFilters.rooms[1]" class="form-control" aria-describedby="to-room">
-            </div> -->
-            <div class="input-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <input type="number" ng-model="propertyFilters.rooms[0]" class="form-control" aria-describedby="from-room">
-              <span class="input-group-addon" id="to-room">To:</span>
-              <input type="number" ng-model="propertyFilters.rooms[1]" class="form-control" aria-describedby="to-room">
+            <div class="input-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
+               <input type="number" ng-model="propertyFilters.rooms[0]" class="form-control" aria-describedby="from-room">
+               <span class="input-group-addon" id="to-room">To:</span>
+               <input type="number" ng-model="propertyFilters.rooms[1]" class="form-control" aria-describedby="to-room">
             </div>
-          </div>
-          <div class="form-group">
-            <h4><em><strong>Gross internal area</strong></em></h4>
-            <div class="input-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <input type="number" ng-model="propertyFilters.grossInternalArea[0]" class="form-control" aria-describedby="from-area">
-              <span class="input-group-addon" id="to-price">To: </span>
-              <input type="number" ng-model="propertyFilters.grossInternalArea[1]" class="form-control" aria-describedby="to-area">
+         </div>
+         <div class="form-group col-md-4">
+            <h4><em><strong>Gross Internal Area</strong></em></h4>
+            <div class="input-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
+               <input type="number" ng-model="propertyFilters.grossInternalArea[0]" class="form-control" aria-describedby="from-area">
+               <span class="input-group-addon" id="to-price">To: </span>
+               <input type="number" ng-model="propertyFilters.grossInternalArea[1]" class="form-control" aria-describedby="to-area">
             </div>
-          </div>
-          <div class="form-group">
+         </div>
+         <div class="form-group col-md-4">
             <h4><em><strong>Elevator</strong></em></h4>
             <label class="radio-inline">
-              <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio1" value=""> N/A
+               <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio1" value=""> N/A
             </label>
             <label class="radio-inline">
-              <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio2" value="1"> Yes
+               <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio2" value="1"> Yes
             </label>
             <label class="radio-inline">
-              <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio3" value="0"> No
+               <input ng-model="propertyFilters.elevator" type="radio" name="hasElevator" id="inlineRadio3" value="0"> No
             </label>
-          </div>
-          <div class="form-group">
+         </div>
+         <div class="form-group col-md-4">
             <h4><em><strong>Balcony</strong></em></h4>
             <label class="radio-inline">
-              <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio1" value=""> N/A
+               <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio1" value=""> N/A
             </label>
             <label class="radio-inline">
-              <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio2" value="1"> Yes
+               <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio2" value="1"> Yes
             </label>
             <label class="radio-inline">
-              <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio3" value="0"> No
+               <input ng-model="propertyFilters.balcony" type="radio" name="hasBalcony" id="inlineRadio3" value="0"> No
             </label>
-          </div>
-        </div>
-        <div class="form-group">
-          <button ng-click="resetPropertyFilters()" class="btn btn-success">Filter reset</button>
-        </div>
+         </div>
+      </form>
+      <div>
+         <button ng-click="resetPropertyFilters()" class="btn btn-success">Filter reset</button>
       </div>
-    </form>
-  </section>
-  </div> 
-  <section ng-include="partialsDir+'views/search-content-list.html'">
-  </section>
+   </section>
+   <section ng-include="partialsDir+'views/search-content-list.html'">
+   </section>
 </section>

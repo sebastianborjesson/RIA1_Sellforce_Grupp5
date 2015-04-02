@@ -115,7 +115,7 @@ add_filter( 'json_prepare_post', function ($data, $post, $context) {
     'floor' => get_post_meta( $post['ID'], 'floor', true ),
     'elevator' => get_post_meta( $post['ID'], 'elevator', true ),
     'balcony' => get_post_meta( $post['ID'], 'balcony', true ),
-    'property_type' => get_post_meta( $post['ID'], 'property_type', true ),
+    'type' => get_post_meta( $post['ID'], 'type', true ),
   );
   return $data;
 }, 10, 3 );

@@ -4,7 +4,7 @@ app.controller("propertyController", ["$scope", "Property", "$routeParams", "SIT
   };
 
 	console.log("propertyController is alive! routeParams: ", $routeParams);
-
+	hah = Property;
 	Property.find($routeParams);
 	$scope.partialsDir = SITE_INFO.partials;
   $scope.gotoImages = function(){

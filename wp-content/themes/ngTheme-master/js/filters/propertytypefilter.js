@@ -1,4 +1,4 @@
-app.filter('propertyType', function() {
+app.filter('propertyTypeFilter', function() {
   return function (properties, type) {
     if (!properties) { return; }
     
@@ -27,7 +27,7 @@ app.filter('propertyType', function() {
       for (var j in type) {
         if (
           type[j] &&
-          j == property.propertyData.property_type
+          j == property.propertyData.type
         ) {
 
           filtered.push(property);
