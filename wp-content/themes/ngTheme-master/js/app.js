@@ -17,8 +17,8 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       controller : "propertyController"
     })
      .when("/contact", {
-      templateUrl : SITE_INFO.partials+"views/property.html",
-      controller : "homeController"
+      templateUrl : SITE_INFO.partials+"views/contact.html",
+      controller : "contactController"
     })
     .otherwise({
       redirectTo: "/"
