@@ -6544,13 +6544,6 @@ button.close {
 .panel-title a {
   cursor: pointer;
 }
-/* header banner background img */
-.headerBanner {
-  height: 200px;
-  background-position: 50% 40%;
-  background-repeat: no-repeat;
-  border-radius: 4px;
-}
 /* Sticky footer */
 html,
 body {
@@ -6559,7 +6552,7 @@ body {
 main {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -142px;
+  margin-bottom: -70px;
 }
 main:after {
   content: "";
@@ -6567,8 +6560,42 @@ main:after {
 }
 footer,
 main:after {
-  height: 142px;
+  height: 70px;
 }
 footer {
-  background: orange;
+  background: #919090;
 }
+.search-title {
+  margin-left: 30px;
+}
+.footTitle, .footNumber, .footEmail {
+  margin-top: 25px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+.dropdown-menu > .dropdown > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown a {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+@media all and (max-width: 1190px) and (min-width: 980px) {
+  .footTitle, .footNumber, .footEmail {
+    font-size: 13px;
+  }
+}
+
+@media all and (max-width: 979px) {
+  .footTitle, .footNumber, .footEmail {
+    font-size: 6px;
+  }
+}
+

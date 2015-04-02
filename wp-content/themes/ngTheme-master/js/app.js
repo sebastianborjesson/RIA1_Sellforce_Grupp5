@@ -27,4 +27,5 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
   $locationProvider.html5Mode(true);
 }])
 .constant('SITE_INFO', myLocalized)
-.constant('API_ROUTE', "wp-json");
+.constant('API_ROUTE', "wp-json")
+.constant('META_VALUES', metaValues);

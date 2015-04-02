@@ -1,29 +1,27 @@
 app.factory("Property", ["WPRest", "$sce", function(WPRest, $sce) {
+	var results = [];
 
 	var propertyServant = {
-		find : function(searchParameters) {
+		find : function(searchParameters, pageNo, startOver) {
 			searchParameters = searchParameters ? searchParameters : {};
+			pageNo = pageNo ? pageNo : 1;
+			var callUrl = "/properties?page="+pageNo;
 
-			var callUrl = "/properties";
-
-			var first = true;
+			if (startOver || pageNo === 1) {
+				results.length = 0;
+			}
 
 			for(var i in searchParameters) {
 				if (searchParameters[i].constructor.name != "Object") {
-					callUrl += first ?
-						"?filter["+i+"]="+searchParameters[i] :
-						"&filter["+i+"]="+searchParameters[i];
+					callUrl += "&filter["+i+"]="+searchParameters[i];
 				}
 				else {
 					for (var j in searchParameters[i]) {
-						callUrl += first ?
-						"?filter["+i+"]["+j+"]="+searchParameters[i][j] :
-						"&filter["+i+"]["+j+"]="+searchParameters[i][j];
-
-						first = false;
+						callUrl += "&filter["+i+"]["+j+"]="+searchParameters[i][j];
 					}
 				}
 			}
+
 			console.log("Found property posts: ", callUrl);
 
 			WPRest.restCall(callUrl, "GET", {}, {
@@ -35,7 +33,6 @@ app.factory("Property", ["WPRest", "$sce", function(WPRest, $sce) {
 					}
 					console.log("Post data: ", postData);
 
-					var results = [];
 
 					var count = 0;
 					

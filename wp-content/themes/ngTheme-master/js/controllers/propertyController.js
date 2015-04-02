@@ -4,7 +4,7 @@ app.controller("propertyController", ["$scope", "Property", "$routeParams", "SIT
   };
 
 	console.log("propertyController is alive! routeParams: ", $routeParams);
-
+	hah = Property;
 	Property.find($routeParams);
 	$scope.partialsDir = SITE_INFO.partials;
   $scope.gotoImages = function(){
@@ -15,6 +15,8 @@ app.controller("propertyController", ["$scope", "Property", "$routeParams", "SIT
   $scope.goBack = function() {
 		$scope.goTo($location.$$path.replace(/\/images/g,""));
   };
+
+  //var pageNo = 1;
 	$scope.$on("foundProperty", function(event, data) {
 		console.log("propertyController on foundProperty: ", data);
 
@@ -23,18 +25,10 @@ app.controller("propertyController", ["$scope", "Property", "$routeParams", "SIT
 		}
 		$scope.property = data[0];
 
-		$scope.propertyData = {};
-		if ("property_type='house'") {
-			$scope.propertyData.show = true;
-		}
+    //pageNo++;
+    //Property.find($routeParams, pageNo);
 	});
 
 
 	
 }]);
-app.filter('capitalize', function() {
-  return function(data) {
-      if (data!=null)
-          return data.substring(0,1).toUpperCase()+data.substring(1);
-  };
-});
