@@ -60,11 +60,6 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
 
    $scope.resetPropertyFilters = function() {
 
-      /*
-         type: objectsForFilters.type,
-         region: objectsForFilters.region,
-         city: objectsForFilters.city,
-      */
       $scope.citySearchFields = {
          propertyData : {
             city: ""

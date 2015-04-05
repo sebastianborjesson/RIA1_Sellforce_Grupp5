@@ -1,6 +1,6 @@
 <section class="container">
    <section class="jumbotron">  
-      <form class="form-horizontal col-md-12">
+      <form name="searchForm" class="form-horizontal col-md-12" ng-submit="submitHandler(searchForm.$valid)" novalidate>
          <div class="form-group col-md-12">
             <label for="search-field" class="control-label"><h4><em><strong>Free Text Search:</strong></em></h4></label>        
             <input ng-model="citySearchFields.propertyData.city" type="text" placeholder= "Search for city" value="" class="form-control" id="search-field">
@@ -12,28 +12,34 @@
             </label>
          </div>
          <div class="form-group col-md-4">
-            <h4><em><strong>Asking Price</strong></em></h4>
+            <h4><em><strong>Asking Price (SEK)</strong></em></h4>
             <div class="input-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
-               <input type="number" ng-model="propertyFilters.askingPrice[0]" class="form-control" aria-describedby="from-price">
+               <input type="number" name="askingPriceFrom" ng-model="propertyFilters.askingPrice[0]" class="form-control" aria-describedby="from-price">
                <span class="input-group-addon" id="to-price">To: </span>
-               <input type="number" ng-model="propertyFilters.askingPrice[1]" class="form-control" aria-describedby="to-price">
+               <input type="number" name="askingPriceTo" ng-model="propertyFilters.askingPrice[1]" class="form-control" aria-describedby="to-price">
             </div>
+            <span class="col-md-6" ng-show="searchForm.askingPriceFrom.$invalid || userForm.askingPriceFrom.$pristine || searchForm.askingPriceTo.$invalid || userForm.askingPriceTo.$pristine" class="help-block">Must be a valid price.</span>
+            <span class="col-md-6" ng-show="propertyFilters.askingPrice[0] > propertyFilters.askingPrice[1]" class="help-block">Must be a valid interval.</span>
          </div>
          <div class="form-group col-md-4">
             <h4><em><strong>Rooms</strong></em></h4>
             <div class="input-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
-               <input type="number" ng-model="propertyFilters.rooms[0]" class="form-control" aria-describedby="from-room">
+               <input type="number" name="roomsFrom" ng-model="propertyFilters.rooms[0]" class="form-control" aria-describedby="from-room">
                <span class="input-group-addon" id="to-room">To:</span>
-               <input type="number" ng-model="propertyFilters.rooms[1]" class="form-control" aria-describedby="to-room">
+               <input type="number" name="roomsTo" ng-model="propertyFilters.rooms[1]" class="form-control" aria-describedby="to-room">
             </div>
+            <span class="col-md-6" ng-show="searchForm.roomsFrom.$invalid || userForm.roomsFrom.$pristine || searchForm.roomsTo.$invalid || userForm.roomsTo.$pristine" class="help-block">Must be a valid number.</span>
+            <span class="col-md-6" ng-show="propertyFilters.rooms[0] > propertyFilters.rooms[1]" class="help-block">Must be a valid interval.</span>
          </div>
          <div class="form-group col-md-4">
-            <h4><em><strong>Gross Internal Area</strong></em></h4>
+            <h4><em><strong>Gross Internal Area (m2)</strong></em></h4>
             <div class="input-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
-               <input type="number" ng-model="propertyFilters.grossInternalArea[0]" class="form-control" aria-describedby="from-area">
+               <input type="number" name="giaFrom" ng-model="propertyFilters.grossInternalArea[0]" class="form-control" aria-describedby="from-area">
                <span class="input-group-addon" id="to-price">To: </span>
-               <input type="number" ng-model="propertyFilters.grossInternalArea[1]" class="form-control" aria-describedby="to-area">
+               <input type="number" name="giaTo" ng-model="propertyFilters.grossInternalArea[1]" class="form-control" aria-describedby="to-area">
             </div>
+            <span class="col-md-6" ng-show="searchForm.giaFrom.$invalid || userForm.giaFrom.$pristine || searchForm.giaTo.$invalid || userForm.giaTo.$pristine" class="help-block">Must be a valid number.</span>
+            <span class="col-md-6" ng-show="propertyFilters.grossInternalArea[0] > propertyFilters.grossInternalArea[1]" class="help-block">Must be a valid interval.</span>
          </div>
          <div class="form-group col-md-4">
             <h4><em><strong>Elevator</strong></em></h4>

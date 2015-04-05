@@ -1,37 +1,37 @@
 <div>
-  <div class="col-md-12">
-    <h5><strong>Details</strong></h5>
-  </div>
+   <div class="col-md-12">
+      <h5><strong>Details</strong></h5>
+   </div>
 </div>
 <div>
-  <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Property Type:</p>
-  <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.property_type | capitalize}}</p>
+   <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Property Type:</p>
+   <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.type | toTitleCase}}</p>
 </div>
 <div>
-  <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Asking Price:</p>
-  <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.asking_price | currency:"":0}} SEK</p>
+   <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Asking Price:</p>
+   <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.asking_price | currency:"":0}} SEK</p>
 </div>
 <div ng-if="property.propertyData.monthly_fee > 0">
-  <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Monthly Fee:</p>
-  <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.monthly_fee | currency:"":0}} SEK</p>
+   <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Monthly Fee:</p>
+   <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.monthly_fee | currency:"":0}} SEK</p>
 </div>
 <div>
-  <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Gross Internal Area:</p>
-  <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.gross_internal_area}} m2</p>
+   <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Gross Internal Area:</p>
+   <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.gross_internal_area}} m2</p>
 </div>
 <div>
-  <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Rooms:</p>
-  <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.rooms}}</p>
+   <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Rooms:</p>
+   <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.rooms}}</p>
 </div>
 <div ng-if="property.propertyData.property_type == 'apartment'">
-  <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Floor:</p>
-  <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.floor}}</p>
+   <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Floor:</p>
+   <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.floor}}</p>
 </div>
 <div ng-if="property.propertyData.property_type == 'apartment'">
-  <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Balcony:</p>
-  <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.balcony | capitalize}}</p>
+   <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Balcony:</p>
+   <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.balcony}}</p>
 </div>
 <div ng-if="property.propertyData.property_type == 'apartment'">
-  <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Elevator:</p>
-  <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.elevator | capitalize}}</p>
+   <p class="col-xs-7 col-sm-4 col-md-8 col-lg-7">Elevator:</p>
+   <p class="col-xs-5 col-sm-8 col-md-4 col-lg-5">{{property.propertyData.elevator}}</p>
 </div>
