@@ -17,10 +17,16 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
   });
 
   $scope.goTo = function(url, hardReload) {
+    if(url.indexOf("http://") === 0 || url.indexOf("https://") === 0) {
+      window.open(url);
+      return;
+    }
     if(hardReload) {
+      console.log("url: ", url);
+      
       url = url.indexOf("/") === 0 ?
-      SITE_INFO.http_root + url.substr(1) :
-      SITE_INFO.http_root + url;
+        SITE_INFO.http_root + url.substr(1) :
+        SITE_INFO.http_root + url;
 
       window.location.href = url;
       return;
