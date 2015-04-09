@@ -6,7 +6,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
   $routeProvider
     .when("/", {
       templateUrl : SITE_INFO.partials+"views/home.html",
-      controller : "homeController"
+      controller : "pageController"
     })
     .when("/property/:name", {
       templateUrl : SITE_INFO.partials+"views/property.html",
@@ -19,6 +19,10 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
      .when("/contact", {
       templateUrl : SITE_INFO.partials+"views/contact.html",
       controller : "contactController"
+    })
+     .when("/about-us", {
+      templateUrl : SITE_INFO.partials+"views/about-us.html",
+      controller : "pageController"
     })
     .otherwise({
       redirectTo: "/"

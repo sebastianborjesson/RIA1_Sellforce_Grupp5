@@ -1,7 +1,7 @@
-//"ngTheme" home controller.
+//"ngTheme" page controller.
 //dependent on $scope && WPService being injected to run
-app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_INFO", "$routeParams", "$location", "META_VALUES", function($scope, Pages, Property, $sce, SITE_INFO, $routeParams, $location, META_VALUES) {
-   console.log("homeController alive!");
+app.controller("pageController", ["$scope", "Pages", "Property", "$sce", "SITE_INFO", "$routeParams", "$location", "META_VALUES", function($scope, Pages, Property, $sce, SITE_INFO, $routeParams, $location, META_VALUES) {
+   console.log("pageController alive!");
    console.log("routeParams: ", $routeParams);
    //get all pages
    Pages.get();
@@ -9,7 +9,7 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
 
    $scope.partialsDir = SITE_INFO.partials;
 
-   console.log("META_VALUES", META_VALUES);
+   //console.log("META_VALUES", META_VALUES);
 
    $scope.propertyFields = {};
    var objectsForFilters = {};
@@ -35,8 +35,8 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
       }
    }
    forFilterSetup();
-   console.log("propertyFields: ", $scope.propertyFields);
-   console.log("objectsForFilters: ", objectsForFilters);
+   //console.log("propertyFields: ", $scope.propertyFields);
+   //console.log("objectsForFilters: ", objectsForFilters);
 
    $scope.citySearchFields = {
       propertyData : {
@@ -56,7 +56,7 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
       balcony : ""
    };
 
-   console.log("propertyFilters: ", $scope.propertyFilters);
+   //console.log("propertyFilters: ", $scope.propertyFilters);
 
    $scope.resetPropertyFilters = function() {
 
@@ -81,7 +81,7 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
    };
 
    $scope.$on("foundProperty", function(event, data) {
-      console.log("homeController on foundProperty: ", data);
+      console.log("pageController on foundProperty: ", data);
       $scope.searchModels = data;
    });
 
@@ -92,7 +92,7 @@ app.controller("homeController", ["$scope", "Pages", "Property", "$sce", "SITE_I
    // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
    //listening for the "gotPageData" broadcast on $http success
    $scope.$on("gotPageData", function(event, data) {
-      console.log("homeController on gotPageData: ", data);
+      console.log("pageController on gotPageData: ", data);
 
       /* 
          angular protects us from "dangerous" HTML by converting it to a string
