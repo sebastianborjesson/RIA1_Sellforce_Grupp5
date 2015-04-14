@@ -6559,7 +6559,12 @@ main {
   margin-bottom: -45px;
   padding-top: 50px;
 }
-footer {
+main:after {
+  content: "";
+  display: block;
+}
+footer,
+main:after {
   height: 45px;
   width: 100%;
   overflow: hidden;
@@ -6592,7 +6597,8 @@ footer strong {
   main {
     margin-bottom: -85px;
   }
-  footer {
+  footer,
+  main:after {
     height: 85px;
   }
 }
