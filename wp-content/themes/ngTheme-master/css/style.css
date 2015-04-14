@@ -6601,6 +6601,15 @@ footer strong {
   main:after {
     height: 85px;
   }
+  .roomsData {
+    display: none;
+  }
+  .grossData {
+    display: none;
+  }
+  .cityData {
+    display: none;
+  }
 }
 .search-title {
   margin-left: 30px;

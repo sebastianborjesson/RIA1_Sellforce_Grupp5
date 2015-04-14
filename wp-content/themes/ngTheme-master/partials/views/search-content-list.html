@@ -5,19 +5,19 @@
       </div>
       <table class="table">
          <tr>
-            <th>City:</th>
+            <th class="cityData">City:</th>
             <th>Adress:</th>
-            <th>Rooms:</th>
-            <th>Gross Internal Area:</th>
-            <th>Date:</th>
+            <th class="roomsData">Rooms:</th>
+            <th class="grossData">Gross Internal Area:</th>
+            <th>Asking Price:</th>
          </tr>
          <tr ng-repeat="searchResults in searchModels | filter:citySearchFields | propertyTypeFilter:propertyFilters.type | regionFilter:propertyFilters.region | cityFilter:propertyFilters.city | askingPrice:propertyFilters.askingPrice | monthlyFee:propertyFilters.monthlyFee | grossInternalArea:propertyFilters.grossInternalArea | rooms:propertyFilters.rooms | hasElevator:propertyFilters.elevator | hasBalcony:propertyFilters.balcony">
-            <td>{{searchResults.propertyData.city | toTitleCase}}</td>
+            <td class="cityData">{{searchResults.propertyData.city | toTitleCase}}</td>
             <td>{{searchResults.post.title}}</td>
-            <td>{{searchResults.propertyData.rooms}}</td>
-            <td>{{searchResults.propertyData.gross_internal_area}} m2</td>
-            <td>{{searchResults.post.date | date:medium}}</td>
-            <td><button class="btn btn-xs btn-primary" ng-click="goTo('property/'+searchResults.post.slug)">More info</button></td>
+            <td class="roomsData">{{searchResults.propertyData.rooms}}</td>
+            <td class="grossData">{{searchResults.propertyData.gross_internal_area}} m2</td>
+            <td>{{searchResults.propertyData.asking_price | currency:"":0}} SEK</td>
+            <td><button class="propertyButton btn btn-xs btn-primary" ng-click="goTo('property/'+searchResults.post.slug)">More info</button></td>
          </tr>
       </table>
    </div>
