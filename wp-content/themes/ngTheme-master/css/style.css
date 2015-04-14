@@ -6544,58 +6544,58 @@ button.close {
 .panel-title a {
   cursor: pointer;
 }
-/* Sticky footer */
+/* Sticky footer and responsive header & main */
 html,
 body {
   height: 100%;
 }
+.navbar-brand {
+  padding: 15px 15px;
+}
 main {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -70px;
-}
-main:after {
-  content: "";
   display: block;
-}
-footer,
-main:after {
-  height: 70px;
+  min-height: 100%;
+  height: auto !important;
+  margin-bottom: -45px;
+  padding-top: 50px;
 }
 footer {
-  background: #919090;
+  height: 45px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #919090;
+  position: relative;
+  bottom: 0;
+}
+.footer-ul {
+  list-style: none;
+  padding: 15px 0 0 0;
+  width: 100%;
+  position: relative;
+  float: left;
+  display: block;
+  padding-right: 0;
+  padding-left: 0;
+}
+.footer-ul li {
+  position: relative;
+  float: left;
+  display: block;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+}
+footer strong {
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  main {
+    margin-bottom: -85px;
+  }
+  footer {
+    height: 85px;
+  }
 }
 .search-title {
   margin-left: 30px;
 }
-.footTitle, .footNumber, .footEmail {
-  margin-top: 25px;
-  margin-left: 10px;
-  font-size: 15px;
-}
-.dropdown-menu > .dropdown > .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-}
-
-.dropdown:hover > .dropdown-menu {
-  display: block;
-}
-.dropdown a {
-  font-family: 'Ubuntu', sans-serif;
-}
-
-@media all and (max-width: 1190px) and (min-width: 980px) {
-  .footTitle, .footNumber, .footEmail {
-    font-size: 13px;
-  }
-}
-
-@media all and (max-width: 979px) {
-  .footTitle, .footNumber, .footEmail {
-    font-size: 6px;
-  }
-}
-
