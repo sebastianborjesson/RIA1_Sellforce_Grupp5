@@ -6555,16 +6555,15 @@ body {
 main {
   display: block;
   min-height: 100%;
-  height: auto !important;
   margin-bottom: -45px;
   padding-top: 50px;
 }
 main:after {
   content: "";
   display: block;
+  height: 45px;
 }
-footer,
-main:after {
+footer {
   height: 45px;
   width: 100%;
   overflow: hidden;
