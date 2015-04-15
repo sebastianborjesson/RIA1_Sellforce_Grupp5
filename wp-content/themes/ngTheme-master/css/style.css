@@ -4817,7 +4817,10 @@ a.badge:focus {
   padding: 30px 15px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #FFFFFF;
+  border-left: 1px solid #c4daf1;
+  border-right: 1px solid #c4daf1;
+  border-bottom: 1px solid #c4daf1;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -6565,6 +6568,10 @@ main:after {
 }
 .home-margin {
   margin-top: 20px;
+  background-color: white;
+}
+.banner {
+  margin-top: 25px;
 }
 .error-messages {
   margin-top: 20px;
