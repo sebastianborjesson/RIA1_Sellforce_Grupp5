@@ -6563,6 +6563,10 @@ main:after {
   display: block;
   height: 45px;
 }
+.home-margin {
+  margin-top: 20px;
+}
+/*^HÄR FIXAR DU MARGIN SINSEMELLAN TOP OCH CONTENT TY ^ / En av marris dumma kommentarer som bara hon fattar*/
 footer {
   height: 45px;
   width: 100%;

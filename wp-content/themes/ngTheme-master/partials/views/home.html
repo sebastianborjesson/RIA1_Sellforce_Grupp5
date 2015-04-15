@@ -1,11 +1,11 @@
-<section class="container">
+<section class="home-margin container">
    <section class="jumbotron">  
       <form name="searchForm" class="form-horizontal col-md-12" ng-submit="submitHandler(searchForm.$valid)" novalidate>
          <div class="form-group col-md-12">
             <label for="search-field" class="control-label"><h4><em><strong>Free Text Search:</strong></em></h4></label>        
             <input ng-model="citySearchFields.propertyData.city" type="text" placeholder= "Search for city" value="" class="form-control" id="search-field">
          </div>
-         <div class="form-group col-md-4" ng-repeat="(fieldLabel, propertyField) in propertyFields">
+         <div class="form-group col-md-12" ng-repeat="(fieldLabel, propertyField) in propertyFields">
             <h4><em><strong>{{fieldLabel | toTitleCase}}</strong></em></h4>
             <label class="checkbox-inline" ng-repeat="(checkboxLabel, fieldData) in propertyField.data">
                <input type="checkbox" ng-model="propertyFilters[propertyField.id][fieldData.id]" id="{{fieldData.id}}">{{checkboxLabel | toTitleCase}}
