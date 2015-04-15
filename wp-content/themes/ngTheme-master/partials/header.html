@@ -1,30 +1,28 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" ng-click="navCollapse()">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="" ng-click="goTo('/')"><img src="http://localhost/RIA1_Sellforce_Grupp5/wp-content/uploads/2015/04/sellforce_logo.png" alt="Sellforce" title="Sellforce">
-			</a>
-		</div>
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" ng-click="navCollapse()">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="" ng-click="goTo('/')"><img src="http://localhost/RIA1_Sellforce_Grupp5/wp-content/uploads/2015/04/sellforce_logo.png" alt="Sellforce" title="Sellforce">
+		</a>
+	</div>
 
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" ng-class="{true:'collapse', false:''}[isCollapsed]">
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" ng-class="{true:'collapse', false:''}[isCollapsed]">
 
 
-			<!--START RECURSVE VIEW-->
+		<!--START RECURSVE VIEW-->
 
 
-			<ul class="nav navbar-nav navbar-left" ng-include="
-			partialsDir+'views/menuRecursor.html'">
-			</ul>
-		</div><!-- /.navbar-collapse -->
-	</div><!-- /.container-fluid -->
+		<ul class="nav navbar-nav navbar-left" ng-include="
+		partialsDir+'views/menuRecursor.html'">
+		</ul>
+	</div><!-- /.navbar-collapse -->
 </nav>
 
 
