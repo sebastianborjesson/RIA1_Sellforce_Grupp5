@@ -6566,6 +6566,9 @@ main:after {
 .home-margin {
   margin-top: 20px;
 }
+.error-messages {
+  margin-top: 20px;
+}
 /*^HÄR FIXAR DU MARGIN SINSEMELLAN TOP OCH CONTENT TY ^ / En av marris dumma kommentarer som bara hon fattar*/
 footer {
   height: 45px;
