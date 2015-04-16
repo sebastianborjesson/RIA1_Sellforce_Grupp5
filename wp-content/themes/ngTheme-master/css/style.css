@@ -4817,10 +4817,7 @@ a.badge:focus {
   padding: 30px 15px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #FFFFFF;
-  border-left: 1px solid #c4daf1;
-  border-right: 1px solid #c4daf1;
-  border-bottom: 1px solid #c4daf1;
+  background-color: #eeeeee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -6577,6 +6574,12 @@ main:after {
   margin-top: 20px;
 }
 /*^HÄR FIXAR DU MARGIN SINSEMELLAN TOP OCH CONTENT TY ^ / En av marris dumma kommentarer som bara hon fattar*/
+.search-field {
+  background-color: #FFFFFF;
+  border-left: 1px solid #c4daf1;
+  border-right: 1px solid #c4daf1;
+  border-bottom: 1px solid #c4daf1;
+}
 footer {
   height: 45px;
   width: 100%;
